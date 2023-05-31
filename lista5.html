@@ -1,0 +1,822 @@
+
+
+<!DOCTYPE html>
+
+
+<html >
+
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.18.1: http://docutils.sourceforge.net/" />
+
+    <title>Hidrodinâmica para Engenharia Oceânica - Lista 5 - Ondas regulares</title>
+  
+  
+  
+  <script data-cfasync="false">
+    document.documentElement.dataset.mode = localStorage.getItem("mode") || "";
+    document.documentElement.dataset.theme = localStorage.getItem("theme") || "light";
+  </script>
+  
+  <!-- Loaded before other Sphinx assets -->
+  <link href="_static/styles/theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/bootstrap.css?digest=e353d410970836974a52" rel="stylesheet" />
+<link href="_static/styles/pydata-sphinx-theme.css?digest=e353d410970836974a52" rel="stylesheet" />
+
+  
+  <link href="_static/vendor/fontawesome/6.1.2/css/all.min.css?digest=e353d410970836974a52" rel="stylesheet" />
+  <link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-solid-900.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-brands-400.woff2" />
+<link rel="preload" as="font" type="font/woff2" crossorigin href="_static/vendor/fontawesome/6.1.2/webfonts/fa-regular-400.woff2" />
+
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" href="_static/styles/sphinx-book-theme.css?digest=14f4ca6b54d191a8c7657f6c759bf11a5fb86285" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/design-style.4045f2051d55cab465a707391d5b2007.min.css" />
+  
+  <!-- Pre-loaded scripts that we'll load fully later -->
+  <link rel="preload" as="script" href="_static/scripts/bootstrap.js?digest=e353d410970836974a52" />
+<link rel="preload" as="script" href="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52" />
+
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script src="_static/scripts/sphinx-book-theme.js?digest=5a5c038af52cf7bc1a1ec88eea08e6366ee68824"></script>
+    <script>let toggleHintShow = 'Click to show';</script>
+    <script>let toggleHintHide = 'Click to hide';</script>
+    <script>let toggleOpenOnPrint = 'true';</script>
+    <script src="_static/togglebutton.js"></script>
+    <script>var togglebuttonSelector = '.toggle, .admonition.dropdown';</script>
+    <script src="_static/design-tabs.js"></script>
+    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
+const thebe_selector = ".thebe,.cell"
+const thebe_selector_input = "pre"
+const thebe_selector_output = ".output, .cell_output"
+</script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
+    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script>DOCUMENTATION_OPTIONS.pagename = 'lista5';</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="docsearch:language" content="None"/>
+  </head>
+  
+  
+  <body data-bs-spy="scroll" data-bs-target=".bd-toc-nav" data-offset="180" data-bs-root-margin="0px 0px -60%" data-default-mode="">
+
+  
+  
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__primary"
+          id="__primary"/>
+  <label class="overlay overlay-primary" for="__primary"></label>
+  
+  <input type="checkbox"
+          class="sidebar-toggle"
+          name="__secondary"
+          id="__secondary"/>
+  <label class="overlay overlay-secondary" for="__secondary"></label>
+  
+  <div class="search-button__wrapper">
+    <div class="search-button__overlay"></div>
+    <div class="search-button__search-container">
+<form class="bd-search d-flex align-items-center"
+      action="search.html"
+      method="get">
+  <i class="fa-solid fa-magnifying-glass"></i>
+  <input type="search"
+         class="form-control"
+         name="q"
+         id="search-input"
+         placeholder="Search this book..."
+         aria-label="Search this book..."
+         autocomplete="off"
+         autocorrect="off"
+         autocapitalize="off"
+         spellcheck="false"/>
+  <span class="search-button__kbd-shortcut"><kbd class="kbd-shortcut__modifier">Ctrl</kbd>+<kbd>K</kbd></span>
+</form></div>
+  </div>
+  
+    <nav class="bd-header navbar navbar-expand-lg bd-navbar">
+    </nav>
+  
+  <div class="bd-container">
+    <div class="bd-container__inner bd-page-width">
+      
+      <div class="bd-sidebar-primary bd-sidebar">
+        
+
+  
+  <div class="sidebar-header-items sidebar-primary__section">
+    
+    
+    
+    
+  </div>
+  
+    <div class="sidebar-primary-items__start sidebar-primary__section">
+        <div class="sidebar-primary-item">
+  
+
+<a class="navbar-brand logo" href="#">
+  
+  
+  
+  
+    
+    
+      
+    
+    
+    <img src="_static/COPPE_logo.jpg" class="logo__image only-light" alt="Logo image"/>
+    <script>document.write(`<img src="_static/COPPE_logo.jpg" class="logo__image only-dark" alt="Logo image"/>`);</script>
+  
+  
+</a></div>
+        <div class="sidebar-primary-item"><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
+    <div class="bd-toc-item navbar-nav active">
+        
+        <ul class="nav bd-sidenav bd-sidenav__home-link">
+            <li class="toctree-l1 current active">
+                <a class="reference internal" href="#">
+                    COV-723 - Hidrodinâmica para Engenharia Oceânica
+                </a>
+            </li>
+        </ul>
+        <ul class="nav bd-sidenav">
+
+
+
+
+
+</ul>
+
+    </div>
+</nav></div>
+    </div>
+  
+  
+  <div class="sidebar-primary-items__end sidebar-primary__section">
+  </div>
+  
+  <div id="rtd-footer-container"></div>
+
+
+      </div>
+      
+      <main id="main-content" class="bd-main">
+        
+        
+
+<div class="sbt-scroll-pixel-helper"></div>
+
+          <div class="bd-content">
+            <div class="bd-article-container">
+              
+              <div class="bd-header-article">
+<div class="header-article-items header-article__inner">
+  
+    <div class="header-article-items__start">
+      
+        <div class="header-article-item"><label class="sidebar-toggle primary-toggle btn btn-sm" for="__primary" title="Toggle primary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+  <span class="fa-solid fa-bars"></span>
+</label></div>
+      
+    </div>
+  
+  
+    <div class="header-article-items__end">
+      
+        <div class="header-article-item">
+
+<div class="article-header-buttons">
+
+
+
+<button onclick="toggleFullScreen()"
+  class="btn btn-sm btn-fullscreen-button"
+  title="Fullscreen mode"
+  data-bs-placement="bottom" data-bs-toggle="tooltip"
+>
+  
+
+<span class="btn__icon-container">
+  <i class="fas fa-expand"></i>
+  </span>
+
+</button>
+
+
+<script>
+document.write(`
+  <button class="theme-switch-button btn btn-sm btn-outline-primary navbar-btn rounded-circle" title="light/dark" aria-label="light/dark" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="theme-switch" data-mode="light"><i class="fa-solid fa-sun"></i></span>
+    <span class="theme-switch" data-mode="dark"><i class="fa-solid fa-moon"></i></span>
+    <span class="theme-switch" data-mode="auto"><i class="fa-solid fa-circle-half-stroke"></i></span>
+  </button>
+`);
+</script>
+
+<script>
+document.write(`
+  <button class="btn btn-sm navbar-btn search-button search-button__button" title="Search" aria-label="Search" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </button>
+`);
+</script>
+<label class="sidebar-toggle secondary-toggle btn btn-sm" for="__secondary"title="Toggle secondary sidebar" data-bs-placement="bottom" data-bs-toggle="tooltip">
+    <span class="fa-solid fa-list"></span>
+</label>
+</div></div>
+      
+    </div>
+  
+</div>
+</div>
+              
+              
+
+<div id="jb-print-docs-body" class="onlyprint">
+    <h1>COV-723 - Hidrodinâmica para Engenharia Oceânica</h1>
+    <!-- Table of contents -->
+    <div id="print-main-content">
+        <div id="jb-print-toc">
+            
+            <div>
+                <h2> Contents </h2>
+            </div>
+            <nav aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+<li class="toctree-l1 toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="lista5.html#document-Lista_5-Q1">Análise dimensional</a></li>
+<li class="toctree-l1 toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="lista5.html#document-Lista_5-Q2">Forma em movimento</a></li>
+<li class="toctree-l1 toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="lista5.html#document-Lista_5-Q3">Equação diferencial ordinária de segunda ordem com coeficientes constantes</a></li>
+<li class="toctree-l1 toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="lista5.html#document-Lista_5-Q4">Definições e conceitos</a></li>
+<li class="toctree-l1 toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="lista5.html#document-Lista_5-Q5">Velocidade da partícula</a></li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+
+              
+                
+<div id="searchbox"></div>
+                <article class="bd-article" role="main">
+                  
+  <section class="tex2jax_ignore mathjax_ignore" id="cov-723-hidrodinamica-para-engenharia-oceanica">
+<h1>COV-723 - Hidrodinâmica para Engenharia Oceânica<a class="headerlink" href="#cov-723-hidrodinamica-para-engenharia-oceanica" title="Permalink to this headline">#</a></h1>
+<p>Autor: Evandro F. de Paula Filho</p>
+<p>Professor: Antônio Fernandes</p>
+<p>Programa de Engenharia Oceânica - Copee/UFRJ - Trimestre 2023.1</p>
+<div style="text-align: justify"> 
+    Este documento compreende a resolução da lista 5 da disciplina de Hidrodinâmica para Engenharia Oceânica ministrada no primeiro trimestre de 2023.1 pelo profº Antonio Carlos Fernandes. 
+</div><div class="toctree-wrapper compound">
+<span id="document-Lista_5-Q1"></span><section class="tex2jax_ignore mathjax_ignore" id="analise-dimensional">
+<h2>Análise dimensional<a class="headerlink" href="#analise-dimensional" title="Permalink to this headline">#</a></h2>
+<p>Seja M, L, T as variáveis fundamentais: massa, comprimento e tempo.</p>
+<p>a) Onda de superfície</p>
+<div class="math notranslate nohighlight">
+\[ \omega^2 = kg \]</div>
+<p>Sendo <span class="math notranslate nohighlight">\(k = \dfrac{2\pi}{\lambda}\)</span> e <span class="math notranslate nohighlight">\(g\)</span> a aceleração da gravidade. Temos então:</p>
+<div class="math notranslate nohighlight">
+\[[\omega] = \dfrac{rad}{s} = 1 \times T^{-1} \]</div>
+<div class="math notranslate nohighlight">
+\[[k] = \dfrac{rad}{m} = 1 \times L^{-1}\]</div>
+<div class="math notranslate nohighlight">
+\[[g] = \dfrac{m}{s^2} = L^1T^{-2}\]</div>
+<p>Sendo assim, substituindo na equação, temos:</p>
+<div class="math notranslate nohighlight">
+\[ [\omega^2] = \dfrac{rad^2}{s^2} = T^{-2} = [kg] = (1 \times L^{-1}) (L^1T^{-2}) = T^{-2} \]</div>
+<p>Demonstrando assim, a equivalência dimensional.</p>
+<p>b) Onda capilar</p>
+<div class="math notranslate nohighlight">
+\[\omega^2 = \dfrac{k^3\tau}{\rho}\]</div>
+<p>Onde <span class="math notranslate nohighlight">\(\tau\)</span> é a tensão superifcial (para interface ar-água <span class="math notranslate nohighlight">\(\tau=0.07\; N/m\)</span> e <span class="math notranslate nohighlight">\(\rho\)</span> é a densidade d’água.</p>
+<div class="math notranslate nohighlight">
+\[[\omega] = \dfrac{rad}{s} = 1 \times T^{-1} \]</div>
+<div class="math notranslate nohighlight">
+\[[k] = \dfrac{rad}{m} = 1 \times L^{-1}\]</div>
+<div class="math notranslate nohighlight">
+\[ [\tau] = kg\dfrac{m}{s^2} \dfrac{1}{m} = M^1L^0T^{-2} \]</div>
+<div class="math notranslate nohighlight">
+\[ [\rho] = \dfrac{kg}{m^3} = M^1L^{-3}\]</div>
+<div class="math notranslate nohighlight">
+\[[\omega^2] = \dfrac{rad^2}{s^2} = T^{-2} = \left[\dfrac{k^3\tau}{\rho} \right] 
+= (1 \times L^{-3})(M^1T^{-2})(M^{-1}L^{3}) = T^{-2} \]</div>
+<p>Demonstrando assim, a equivalência dimensional.</p>
+<p>c) Onda interna (na interface entre 2 fluidos de densidade diferente)</p>
+<div class="math notranslate nohighlight">
+\[ \omega^2 = kg\left( \dfrac{\rho_2-\rho_1}{\rho_2+\rho_1} \right) \]</div>
+<p>A soma ou diferença entre 2 variáveis equivalentes dimensionalmente resulta em um resultado de mesma dimensão, logo os termos <span class="math notranslate nohighlight">\(\rho_2-\rho_1\)</span> e <span class="math notranslate nohighlight">\(\rho_2+\rho_1\)</span> possuem dimensções iguais vazendo com que a razão <span class="math notranslate nohighlight">\(\dfrac{\rho_2-\rho_1}{\rho_2+\rho_1}\)</span> seja adimensional, portanto, analogamente ao item <b>(a)</b> temos a equivalência provada já que:
+$<span class="math notranslate nohighlight">\( [\omega^2] = \dfrac{rad^2}{s^2} = T^{-2} = [kg]\left[ \dfrac{\rho_2-\rho_1}{\rho_2+\rho_1} \right] = (1 \times L^{-1}) (L^1T^{-2})(1) = T^{-2} \)</span>$</p>
+<figure class="align-default" id="onda-grav-fig">
+<img alt="_images/ondas-grav.jpg" src="_images/ondas-grav.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 1 </span><span class="caption-text">Propagação de ondas gravitacionais e de interface</span><a class="headerlink" href="#onda-grav-fig" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+<figure class="align-default" id="onda-cap">
+<img alt="_images/ondas-cap.jpg" src="_images/ondas-cap.jpg" />
+<figcaption>
+<p><span class="caption-number">Fig. 2 </span><span class="caption-text">Propagação de ondas capilares</span><a class="headerlink" href="#onda-cap" title="Permalink to this image">#</a></p>
+</figcaption>
+</figure>
+</section>
+<span id="document-Lista_5-Q2"></span><div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mf">0.25</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> 
+    <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">=</span><span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">=</span><span class="mi">0</span>
+    <span class="k">return</span> <span class="n">f</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="c1"># Item (a):</span>
+<span class="k">for</span> <span class="n">T</span> <span class="ow">in</span> <span class="n">t</span><span class="p">:</span>
+    <span class="n">f_a</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="n">c</span><span class="o">*</span><span class="n">T</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f_a</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;f(x-</span><span class="si">{</span><span class="n">c</span><span class="o">*</span><span class="n">T</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;f(x-ct)&#39;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">labelpad</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x, m&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Forma em movimento - item (a)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Item (b):</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">T</span> <span class="ow">in</span> <span class="n">t</span><span class="p">:</span>
+    <span class="n">f_b</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="n">c</span><span class="o">*</span><span class="n">T</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f_b</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;f(x+</span><span class="si">{</span><span class="n">c</span><span class="o">*</span><span class="n">T</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;f(x+ct)&#39;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">labelpad</span><span class="o">=</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x, m&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Forma em movimento - item (b)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="_images/d887387e21e03596426be99f674bdb10be58b0b9352b47173fdd1bb78a98f0f0.png" src="_images/d887387e21e03596426be99f674bdb10be58b0b9352b47173fdd1bb78a98f0f0.png" />
+<img alt="_images/a37a908fe9eaa50659224a9eb5b3f4666ff12c24a48cf7417aaec1af2ecb5b52.png" src="_images/a37a908fe9eaa50659224a9eb5b3f4666ff12c24a48cf7417aaec1af2ecb5b52.png" />
+</div>
+</div>
+<section class="tex2jax_ignore mathjax_ignore" id="forma-em-movimento">
+<h2>Forma em movimento<a class="headerlink" href="#forma-em-movimento" title="Permalink to this headline">#</a></h2>
+<p>Como pôde-se verificar acima, a principal diferença entre as funções (a) e (b) é a direção do movimento, a função <span class="math notranslate nohighlight">\(f(x-ct)\)</span> compreende uma progressão no sentido positivo do eixo x, ou seja, para direita, já a função <span class="math notranslate nohighlight">\(f(x+ct)\)</span> progride para a esquerda, no sentido negativo do eixo. A seguir os plots das funções (c) e (d).</p>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="n">t</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">6</span><span class="p">,</span> <span class="mi">6</span><span class="p">)</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mf">0.25</span>
+<span class="k">def</span> <span class="nf">f</span><span class="p">(</span><span class="n">x</span><span class="p">):</span> 
+    <span class="k">if</span> <span class="mi">0</span> <span class="o">&lt;</span> <span class="n">x</span> <span class="o">&lt;=</span> <span class="mi">1</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">=</span><span class="mi">1</span>
+    <span class="k">else</span><span class="p">:</span>
+        <span class="n">f</span><span class="o">=</span><span class="mi">0</span>
+    <span class="k">return</span> <span class="n">f</span>
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+
+<span class="c1"># Item (c):</span>
+<span class="k">for</span> <span class="n">T</span> <span class="ow">in</span> <span class="n">t</span><span class="p">:</span>
+    <span class="n">f_c</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="n">c</span><span class="o">*</span><span class="n">T</span><span class="p">)</span> <span class="o">+</span> <span class="n">f</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="n">c</span><span class="o">*</span><span class="n">T</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f_c</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;f(x-</span><span class="si">{</span><span class="n">c</span><span class="o">*</span><span class="n">T</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">) + f(x+</span><span class="si">{</span><span class="n">c</span><span class="o">*</span><span class="n">T</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;f(x-ct) + f(x+ct)&#39;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">labelpad</span><span class="o">=-</span><span class="mi">2</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;top&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x, m&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Forma em movimento - item (c)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Item (d):</span>
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="k">for</span> <span class="n">T</span> <span class="ow">in</span> <span class="n">t</span><span class="p">:</span>
+    <span class="n">f_d</span> <span class="o">=</span> <span class="p">[</span><span class="n">f</span><span class="p">(</span><span class="n">i</span><span class="o">-</span><span class="n">c</span><span class="o">*</span><span class="n">T</span><span class="p">)</span> <span class="o">-</span> <span class="n">f</span><span class="p">(</span><span class="n">i</span><span class="o">+</span><span class="n">c</span><span class="o">*</span><span class="n">T</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">x</span><span class="p">]</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">f_d</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">f</span><span class="s1">&#39;f(x-</span><span class="si">{</span><span class="n">c</span><span class="o">*</span><span class="n">T</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">) - f(x+</span><span class="si">{</span><span class="n">c</span><span class="o">*</span><span class="n">T</span><span class="si">:</span><span class="s1">.1f</span><span class="si">}</span><span class="s1">)&#39;</span><span class="p">)</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;f(x-ct) - f(x+ct)&#39;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">labelpad</span><span class="o">=-</span><span class="mi">2</span><span class="p">,</span> <span class="n">loc</span><span class="o">=</span><span class="s2">&quot;top&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x, m&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Forma em movimento - item (d)&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="_images/c4297e63f00f17a056e89d962cdef16a602c1464c6ee799418eb873c81039ce4.png" src="_images/c4297e63f00f17a056e89d962cdef16a602c1464c6ee799418eb873c81039ce4.png" />
+<img alt="_images/c7ce23cb7b31e6437b08042c6bccdf5c32d5d6b9680da21758b63944de602083.png" src="_images/c7ce23cb7b31e6437b08042c6bccdf5c32d5d6b9680da21758b63944de602083.png" />
+</div>
+</div>
+</section>
+<span id="document-Lista_5-Q3"></span><section class="tex2jax_ignore mathjax_ignore" id="equacao-diferencial-ordinaria-de-segunda-ordem-com-coeficientes-constantes">
+<h2>Equação diferencial ordinária de segunda ordem com coeficientes constantes<a class="headerlink" href="#equacao-diferencial-ordinaria-de-segunda-ordem-com-coeficientes-constantes" title="Permalink to this headline">#</a></h2>
+<p><span class="math notranslate nohighlight">\(\DeclareMathOperator{\sen}{sen}\)</span></p>
+<div class="math notranslate nohighlight">
+\[\ddot{y} + \alpha y = 0\]</div>
+<p>Onde <span class="math notranslate nohighlight">\(\alpha\)</span> é um número real.</p>
+<p>(a) <span class="math notranslate nohighlight">\(\alpha &gt; 0\)</span>:</p>
+<p>Para <span class="math notranslate nohighlight">\(\alpha &gt; 0\)</span>, podemos definir <span class="math notranslate nohighlight">\(u \;|\; \alpha=u^2\)</span>, então temos:</p>
+<div class="math notranslate nohighlight">
+\[\ddot{y} + u^2 y = 0\]</div>
+<p>Sendo assim, o polinômio característico da forma <span class="math notranslate nohighlight">\(\lambda^2 + a\lambda+b=0\)</span> será: <span class="math notranslate nohighlight">\(\lambda^2 +u^2=0\)</span>, portanto teremos 2 raízes distintas e puramente imaginárias da forma <span class="math notranslate nohighlight">\(\lambda_{1,2} = \pm ui \)</span>, logo a solução geral terá forma:</p>
+<div class="math notranslate nohighlight">
+\[y(x) = A\sen(ux) + B\cos(ux) =  A\sen(\sqrt{\alpha}x) + B\cos(\sqrt{\alpha}x)\]</div>
+<p>(b) <span class="math notranslate nohighlight">\(\alpha &lt; 0\)</span>:</p>
+<p>Para <span class="math notranslate nohighlight">\(\alpha &lt; 0\)</span>, podemos definir <span class="math notranslate nohighlight">\(v \;|\; \alpha=-v^2\)</span>, então temos:
+$<span class="math notranslate nohighlight">\(\ddot{y} - v^2 y = 0\)</span>$</p>
+<p>Sendo assim, o polinômio característico será: <span class="math notranslate nohighlight">\(\lambda^2 -v^2=0\)</span>, portanto teremos 2 raízes reais e distintas da forma <span class="math notranslate nohighlight">\(\lambda_{1,2} = \pm v\)</span>, logo a solução geral terá forma:</p>
+<div class="math notranslate nohighlight">
+\[ y(x) = Ae^{v x} + Be^{-v x} = Ae^{-\sqrt{\alpha} x} + Be^{\sqrt{\alpha} x}\]</div>
+<p>(c) <span class="math notranslate nohighlight">\(\alpha = 0\)</span>:</p>
+<p>Nesse caso teremos:</p>
+<div class="math notranslate nohighlight">
+\[\ddot{y} = 0\]</div>
+<p>Integrando 2 vezes, temos:</p>
+<div class="math notranslate nohighlight">
+\[ y(x) = Ax+B\]</div>
+<p>Ao se debruçar sobre a formulação matemática de ondas lineares regulares, temos que lidar com a equação de Laplace <span class="math notranslate nohighlight">\(\nabla^2\Phi=0\)</span>, recaindo numa EDO de 2º ordem com coeficientes constantes onde <span class="math notranslate nohighlight">\(\alpha=0\)</span> e também ao derivar uma expressão para a pressão usando o potencial de velocidades acabamos recaindo numa EDO de 2º ordem do tipo:</p>
+<div class="math notranslate nohighlight">
+\[ \dfrac{d^2P(z)}{dz^2} - k^2P(z) = 0\]</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+
+<span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">15</span><span class="p">,</span> <span class="mf">0.1</span><span class="p">)</span>
+<span class="n">alpha_1</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">y1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">alpha_1</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="p">)</span><span class="o">+</span><span class="mf">0.5</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">alpha_1</span><span class="p">)</span><span class="o">*</span><span class="n">x</span><span class="p">)</span>
+
+<span class="n">alpha_2</span> <span class="o">=</span> <span class="o">-</span><span class="mi">2</span>
+<span class="n">y2</span> <span class="o">=</span> <span class="mf">0.1</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="o">-</span><span class="n">alpha_2</span><span class="o">*</span><span class="n">x</span><span class="p">))</span><span class="o">+</span><span class="mi">10</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="o">-</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="o">-</span><span class="n">alpha_2</span><span class="o">*</span><span class="n">x</span><span class="p">))</span>
+
+<span class="n">y3</span> <span class="o">=</span> <span class="mf">0.5</span><span class="o">*</span><span class="n">x</span><span class="o">+</span><span class="mi">1</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$y_1$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$y_2$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y3</span><span class="p">,</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;$y_3$&#39;</span><span class="p">)</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s1">&#39;y(x)&#39;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">labelpad</span><span class="o">=</span><span class="mi">10</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;x&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylim</span><span class="p">(</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span><span class="mi">15</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Soluções da EDO&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="_images/9e4c24094c1abb3ce62242c208412307fd8a76685ef11ebcbf3abaa213f385f2.png" src="_images/9e4c24094c1abb3ce62242c208412307fd8a76685ef11ebcbf3abaa213f385f2.png" />
+</div>
+</div>
+</section>
+<span id="document-Lista_5-Q4"></span><section class="tex2jax_ignore mathjax_ignore" id="definicoes-e-conceitos">
+<h2>Definições e conceitos<a class="headerlink" href="#definicoes-e-conceitos" title="Permalink to this headline">#</a></h2>
+<section id="a">
+<h3>(a)<a class="headerlink" href="#a" title="Permalink to this headline">#</a></h3>
+<p>Definimos número de onda como a medida de frequência espacial da onda, ou seja, quantas voltas completas ela dá por unidade de seu comprimento, sendo assim, o número de onda <span class="math notranslate nohighlight">\(k\)</span> é definido como:</p>
+<div class="math notranslate nohighlight">
+\[ k = \dfrac{2\pi}{\lambda}\]</div>
+<p>Onde <span class="math notranslate nohighlight">\(\lambda\)</span> é o comprimento de onda.</p>
+<p>A frequência angular é uma grandeza análoga, porém, para o domínio temporal, sendo assim, a frequência angular <span class="math notranslate nohighlight">\(\omega\)</span> será:</p>
+<div class="math notranslate nohighlight">
+\[ \omega = \dfrac{2\pi}{T} \]</div>
+<p>Onde <span class="math notranslate nohighlight">\(T\)</span> é o período de onda.</p>
+</section>
+<section id="b">
+<h3>(b)<a class="headerlink" href="#b" title="Permalink to this headline">#</a></h3>
+<p>Porque esta é a velocidade com que a forma da onda e, consequentemente, sua fase se move pelo espaço. Essa grandeza é definida pelo espaço percorrido pelo pico (ou vale) por unidade de tempo, ou seja, a velocidade de fase <span class="math notranslate nohighlight">\(c\)</span> é dada pela relção:</p>
+<div class="math notranslate nohighlight">
+\[c = \dfrac{\lambda}{T} = \dfrac{\omega}{k}\]</div>
+</section>
+<section id="c">
+<h3>(c)<a class="headerlink" href="#c" title="Permalink to this headline">#</a></h3>
+<p>A condição de contorno que deve ser respeitada no fundo do canal é a condição de impenetrabilidade, ou seja, a velocidade normal da partícula fluida é nula.</p>
+<div class="math notranslate nohighlight">
+\[ \dfrac{\partial \vec{V}}{\partial \hat{n}} = \vec{0} \]</div>
+<p>Que, considerando a teoria potencial e o sistema de coordenadas cartesiano, ou seja <span class="math notranslate nohighlight">\(\vec{V} = \vec{V}(x,y,z) = (\vec{u},\; \vec{v},\; \vec{w})\)</span> , pode ser reescrita da forma:</p>
+<div class="math notranslate nohighlight">
+\[\vec{w} = \dfrac{\partial \Phi_w }{\partial z} \hat{k} = \vec{0} \]</div>
+</section>
+<section id="d">
+<h3>(d)<a class="headerlink" href="#d" title="Permalink to this headline">#</a></h3>
+<p>A condição de contorno cinemática define que a velocidade vertical da partícual d’água na superfície liver do fluido é igual à velocidade vertical da superfície em si (condição de não vazamento), sendo a elevação uma função do tempo e distância, temos:</p>
+<div class="math notranslate nohighlight">
+\[ \dfrac{dz}{dt}\Bigr|_{\substack{z=\zeta}} = \dfrac{D}{Dt}\zeta(x,t)\Bigr|_{\substack{z=\zeta}} 
+= \left[\dfrac{\partial\zeta}{\partial t} + \dfrac{\partial\zeta}{\partial x} \dfrac{dx}{dt} \right]_{z=\zeta} 
+= \left[\dfrac{\partial\zeta}{\partial t} + u \dfrac{d\zeta}{dx}\right]_{z=\zeta}  \]</div>
+</section>
+<section id="e">
+<h3>(e)<a class="headerlink" href="#e" title="Permalink to this headline">#</a></h3>
+<p>A condição de contorno dinâmica vai determinar o equilíbrio de pressões entre a interface onda-ar, ou seja, na superfície livre teremos que a pressão do fluido será equivalente à pressão atmosférica.</p>
+</section>
+<section id="f">
+<h3>(f)<a class="headerlink" href="#f" title="Permalink to this headline">#</a></h3>
+<p>Usando a forma geral da condição de contorno cinemática demonstrada no item (c), podemos linearlizar essa relação considerando a hipótese de ondas de pequena declividade, sendo assim teremos</p>
+<div class="math notranslate nohighlight">
+\[u \dfrac{d\zeta}{dx} \to 0\]</div>
+<p>Portanto:</p>
+<div class="math notranslate nohighlight">
+\[\dfrac{dz}{dt}\Bigr|_{\substack{z=\zeta}} = \dfrac{\partial\zeta}{\partial t}\Bigr|_{\substack{z=\zeta}}\]</div>
+<div class="math notranslate nohighlight">
+\[\dfrac{\partial \Phi_w}{\partial z}\Bigr|_{\substack{z=\zeta}} = \dfrac{\partial\zeta}{\partial t}\Bigr|_{\substack{z=\zeta}}\]</div>
+<p>Sendo essa a condição de contorno cinemática linearizada.</p>
+<p>Partindo do equilíbrio de pressões e com uso da equação de Bernoulli, podemos escrever a condição de contorno dinâmica da seguinte forma:</p>
+<p><span class="math notranslate nohighlight">\(p(z=\zeta) = p_0\)</span></p>
+<div class="math notranslate nohighlight">
+\[ \dfrac{\partial \Phi_w}{\partial t} + \dfrac{1}{2} (u^2+v^2+w^2)+\dfrac{p}{\rho} + gz= C\]</div>
+<p>Ao linearizar a condição acima e fazendo <span class="math notranslate nohighlight">\(z=\zeta\)</span>, teremos:</p>
+<div class="math notranslate nohighlight">
+\[ \dfrac{\partial \Phi_w}{\partial t}+\dfrac{p_0}{\rho} + g\zeta= C\]</div>
+<p>A constante <span class="math notranslate nohighlight">\(p_0/\rho - C\)</span> pode ser incluída dentro da derivada função potencial, portanto, a forma final da condição dinâmica linearizada será:</p>
+<div class="math notranslate nohighlight">
+\[ \dfrac{\partial \Phi_w}{\partial t}\Bigr|_{\substack{z=\zeta}}+ g\zeta= 0\]</div>
+<p>Expandindo o potencial em série de Taylor e tendo em mente a hipótese de pequenos deslocamentos verticais, podemos definir essa condição também para <span class="math notranslate nohighlight">\(z=0\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[ \dfrac{\partial \Phi_w}{\partial t}\Bigr|_{\substack{z=0}}+ g\zeta= 0\]</div>
+<p>Como a condição cinemática também é válida também para <span class="math notranslate nohighlight">\(z=0\)</span>, derivando a condição de contorno dinâmica linearizada acima, podemos escrever:</p>
+<div class="math notranslate nohighlight">
+\[ \dfrac{\partial^2 \Phi_w}{\partial t^2}\Bigr|_{\substack{z=0}} + g\dfrac{\partial\zeta}{\partial t}\Bigr|_{\substack{z=0}} = 0 \]</div>
+<div class="math notranslate nohighlight">
+\[ \dfrac{\partial z}{\partial t}\Bigr|_{\substack{z=0}} + \dfrac{1}{g}\dfrac{\partial^2 \Phi_w}{\partial t^2}\Bigr|_{\substack{z=0}} = 0 \]</div>
+</section>
+<section id="g">
+<h3>(g)<a class="headerlink" href="#g" title="Permalink to this headline">#</a></h3>
+<p>Usando a relação da disperção e assumindo a hipótese de águas profundas, temos:</p>
+<div class="math notranslate nohighlight">
+\[\omega^2 = kg \quad \text{Relação da dispersão para águas profundas}\]</div>
+<div class="math notranslate nohighlight">
+\[ \left(\dfrac{2\pi}{10}\right)^2 = k(9.81) \;\Rightarrow\; \dfrac{2\pi}{\lambda} =  \dfrac{1}{9.81} \left(\dfrac{2\pi}{10}\right)^2 = 0.04 \;rad/m \;\Rightarrow\; \lambda = 157.08 \; m\]</div>
+<p>Para <span class="math notranslate nohighlight">\(h=1\;m\)</span>, faremos a hipótese de águas rasas, sendo assim:</p>
+<div class="math notranslate nohighlight">
+\[\omega^2 = k^2gh \quad \text{Relação da dispersão para águas rasas}\]</div>
+<div class="math notranslate nohighlight">
+\[ \left(\dfrac{2\pi}{10}\right)^2 = k^2(9.81)(1) \;\Rightarrow\; \dfrac{2\pi}{\lambda} =  \dfrac{1}{\sqrt{9.81}} \dfrac{2\pi}{10} = 0.2 \;rad/m \;\Rightarrow\; \lambda = 31.42 \; m\]</div>
+</section>
+<section id="h">
+<h3>(h)<a class="headerlink" href="#h" title="Permalink to this headline">#</a></h3>
+<p>Usando a relação da disperção para águas profundas, temos:</p>
+<div class="math notranslate nohighlight">
+\[\omega^2 = kg \quad \text{Relação da dispersão para águas profundas}\]</div>
+<div class="math notranslate nohighlight">
+\[ \left(\dfrac{2\pi}{T}\right)^2 = \dfrac{2\pi}{\lambda}g \;\Rightarrow\; \lambda = \left(\dfrac{T}{2\pi}\right)^2 2\pi g = \dfrac{gT^2}{2\pi} \approx 1.56T^2\]</div>
+</section>
+<section id="i">
+<h3>(i)<a class="headerlink" href="#i" title="Permalink to this headline">#</a></h3>
+<p>Para águas profundas temos que a velocidade de fase é dada pela relação:</p>
+<div class="math notranslate nohighlight">
+\[c = \sqrt{\dfrac{g}{k}} = \sqrt{\dfrac{9.81}{0.04}} = 15.66 \; m/s\]</div>
+<p>Para águas rasas temos que a velocidade de fase é dada pela relação:</p>
+<div class="math notranslate nohighlight">
+\[ c = \sqrt{gh} = \sqrt{(9.81)(1)} = 3.13 \; m/s \]</div>
+</section>
+</section>
+<span id="document-Lista_5-Q5"></span><section class="tex2jax_ignore mathjax_ignore" id="velocidade-da-particula">
+<h2>Velocidade da partícula<a class="headerlink" href="#velocidade-da-particula" title="Permalink to this headline">#</a></h2>
+<p><span class="math notranslate nohighlight">\(\DeclareMathOperator{\sen}{sen}\)</span>
+<span class="math notranslate nohighlight">\(\DeclareMathOperator{\senh}{senh}\)</span>
+As componentes da velocidade da partícula é dada por:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left\{\begin{aligned}
+    &amp;u = \zeta_a \omega \dfrac{\cosh[k(h+z)]}{\senh(kh)} \cos(kx-\omega t) \\
+    &amp;w = \zeta_a \omega \dfrac{\senh[k(h+z)]}{\senh(kh)} \sen(kx-\omega t) \\
+\end{aligned}\right.\end{split}\]</div>
+<p>Em águas profundas podemos resumir essas equações para:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\left\{\begin{aligned}
+    &amp;u = \zeta_a \omega e^{kz} \cos(kx-\omega t) \\
+    &amp;w = \zeta_a \omega e^{kz} \sen(kx-\omega t)\\
+\end{aligned}\right.\end{split}\]</div>
+<p>Em águas profundas:</p>
+<div class="math notranslate nohighlight">
+\[V = \sqrt{u^2+w^2} = \zeta_a \omega e^{kz}\]</div>
+<p>Portanto, a velocidade máxima será em <span class="math notranslate nohighlight">\(z=0\)</span>, já que <span class="math notranslate nohighlight">\(e^{kz}\)</span> fica cada vez menor quando a profundidade aumenta, pois <span class="math notranslate nohighlight">\(z\)</span> é positivo pra cima, logo para <span class="math notranslate nohighlight">\(\zeta_a = 3 \;m\)</span> e <span class="math notranslate nohighlight">\(\lambda=200 \;m\)</span> (<span class="math notranslate nohighlight">\(k=0.031\;rad/m\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[\omega = \sqrt{kg} = 0.551 \; rad/s\]</div>
+<div class="math notranslate nohighlight">
+\[V_{m\acute{a}x} = (3)(0.551) = 1.653 \; m/s\]</div>
+<p>Em águas intermediárias:</p>
+<div class="math notranslate nohighlight">
+\[V = \sqrt{u^2+w^2} = \sqrt{ \left[\zeta_a \omega \dfrac{\cosh[k(h+z)]}{\senh(kh)} \cos(kx-\omega t)\right]^2 + \left[\zeta_a \omega \dfrac{\senh[k(h+z)]}{\senh(kh)} \sen(kx-\omega t)\right]^2} \]</div>
+<div class="cell tag_hide-input docutils container">
+<details class="hide above-input">
+<summary aria-label="Toggle hidden content">
+<span class="collapsed">Show code cell source</span>
+<span class="expanded">Hide code cell source</span>
+</summary>
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">from</span> <span class="nn">matplotlib</span> <span class="kn">import</span> <span class="n">pyplot</span> <span class="k">as</span> <span class="n">plt</span>
+<span class="n">L</span>  <span class="o">=</span> <span class="mi">200</span>                       <span class="c1"># Comprimento da onda, m</span>
+<span class="n">A</span>  <span class="o">=</span> <span class="mi">3</span>                         <span class="c1"># Amplitude da onda, m</span>
+<span class="n">g</span>  <span class="o">=</span> <span class="mf">9.81</span>                      <span class="c1"># Aceleração da gravidade, m/s²</span>
+<span class="n">z</span>  <span class="o">=</span> <span class="mi">0</span>                         <span class="c1"># Profundidade média da partícula, m</span>
+<span class="n">k</span>  <span class="o">=</span> <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">/</span><span class="n">L</span>                 <span class="c1"># Número de onda, rad/m</span>
+<span class="n">h1</span> <span class="o">=</span> <span class="mf">0.9</span><span class="o">*</span><span class="mf">0.5</span><span class="o">*</span><span class="n">L</span>                 <span class="c1"># Limite de profundidade máximo para águas profundas, m </span>
+<span class="n">h2</span> <span class="o">=</span> <span class="mf">1.1</span><span class="o">*</span><span class="mf">0.05</span><span class="o">*</span><span class="n">L</span>                <span class="c1"># Limite de profundidade mínimo para águas rasas, m          </span>
+<span class="n">N</span>  <span class="o">=</span> <span class="mi">40</span>                        <span class="c1"># Número de pontos/profundidades </span>
+<span class="n">h</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="n">h2</span><span class="p">,</span> <span class="n">h1</span><span class="p">,</span> <span class="n">N</span><span class="p">)</span>    <span class="c1"># Vetor de profundidades, m</span>
+<span class="n">w</span>  <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="n">g</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">tanh</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="n">h</span><span class="p">))</span> <span class="c1"># Vetor de frequências angulares, rad/s</span>
+<span class="n">kx_wt</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">linspace</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> 
+                    <span class="mi">2</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="p">,</span> 
+                    <span class="n">N</span><span class="p">)</span>         <span class="c1"># Vetor de radianos percorridos, rad</span>
+<span class="n">V_p</span> <span class="o">=</span> <span class="mf">1.653</span>                    <span class="c1"># Velocidade máx. em águas profundas p/z=0, m/s</span>
+
+<span class="n">fig</span><span class="p">,</span> <span class="n">ax</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">V</span><span class="o">=</span><span class="p">[]</span>
+<span class="k">for</span> <span class="n">n</span> <span class="ow">in</span> <span class="nb">range</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">kx_wt</span><span class="p">)):</span>
+    <span class="n">V</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(((</span><span class="n">A</span><span class="o">*</span><span class="n">w</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">cosh</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="p">(</span><span class="n">h</span><span class="o">+</span><span class="n">z</span><span class="p">))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sinh</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="n">h</span><span class="p">))</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">cos</span><span class="p">(</span><span class="n">kx_wt</span><span class="p">[</span><span class="n">n</span><span class="p">]))</span><span class="o">**</span><span class="mi">2</span> <span class="o">+</span>
+                     <span class="p">((</span><span class="n">A</span><span class="o">*</span><span class="n">w</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">sinh</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="p">(</span><span class="n">h</span><span class="o">+</span><span class="n">z</span><span class="p">))</span><span class="o">/</span><span class="n">np</span><span class="o">.</span><span class="n">sinh</span><span class="p">(</span><span class="n">k</span><span class="o">*</span><span class="n">h</span><span class="p">))</span><span class="o">*</span><span class="n">np</span><span class="o">.</span><span class="n">sin</span><span class="p">(</span><span class="n">kx_wt</span><span class="p">[</span><span class="n">n</span><span class="p">]))</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+    <span class="n">ax</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">V</span><span class="p">[</span><span class="n">n</span><span class="p">])</span>
+
+<span class="n">ax</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">ax</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$V_{{deep}}$ = </span><span class="si">{c:.2f}</span><span class="s1"> m/s&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">c</span><span class="o">=</span><span class="n">V_p</span><span class="p">),</span> 
+            <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> 
+            <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">75</span><span class="p">,</span> <span class="mf">1.05</span><span class="o">*</span><span class="n">V_p</span><span class="p">),</span> 
+            <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span> <span class="o">=</span> <span class="n">V_p</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$V, m/s$&#39;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">labelpad</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;h, m&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s1">&#39;Velociodade da partícula - águas intermediárias&#39;</span><span class="p">)</span>
+
+<span class="n">fig2</span><span class="p">,</span> <span class="n">ax2</span> <span class="o">=</span> <span class="n">plt</span><span class="o">.</span><span class="n">subplots</span><span class="p">(</span><span class="n">figsize</span><span class="o">=</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span> <span class="mi">5</span><span class="p">))</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">V</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;kx-$\omega$t = </span><span class="si">{kxwt:.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">kxwt</span><span class="o">=</span><span class="n">kx_wt</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">plot</span><span class="p">(</span><span class="n">h</span><span class="p">,</span> <span class="n">V</span><span class="p">[</span><span class="mi">11</span><span class="p">],</span> <span class="n">label</span><span class="o">=</span><span class="sa">r</span><span class="s1">&#39;kx-$\omega$t = </span><span class="si">{kxwt:.2f}</span><span class="s1">&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">kxwt</span><span class="o">=</span><span class="n">kx_wt</span><span class="p">[</span><span class="mi">11</span><span class="p">]))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="n">y</span> <span class="o">=</span> <span class="n">V_p</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;k&#39;</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s1">&#39;-&#39;</span><span class="p">)</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">legend</span><span class="p">()</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">grid</span><span class="p">()</span>
+<span class="n">ax2</span><span class="o">.</span><span class="n">annotate</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$V_{{deep}}$ = </span><span class="si">{c:.2f}</span><span class="s1"> m/s&#39;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">c</span><span class="o">=</span><span class="n">V_p</span><span class="p">),</span> 
+            <span class="n">xy</span><span class="o">=</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="mi">2</span><span class="p">),</span> 
+            <span class="n">xytext</span><span class="o">=</span><span class="p">(</span><span class="mi">75</span><span class="p">,</span> <span class="mf">1.05</span><span class="o">*</span><span class="n">V_p</span><span class="p">),</span> 
+            <span class="n">fontsize</span><span class="o">=</span><span class="mi">12</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="sa">r</span><span class="s1">&#39;$V, m/s$&#39;</span><span class="p">,</span> <span class="n">rotation</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">labelpad</span><span class="o">=</span><span class="mi">20</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s1">&#39;h, m&#39;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</details>
+<div class="cell_output docutils container">
+<img alt="_images/9e231844c30a6b30f17b8ba919771af224fe5cdc38c932b48d0d0def2c327a09.png" src="_images/9e231844c30a6b30f17b8ba919771af224fe5cdc38c932b48d0d0def2c327a09.png" />
+<img alt="_images/4e8859b363f4bdbc9470e5fd809f26dab09d523a363205d106cf2fadf4482f0e.png" src="_images/4e8859b363f4bdbc9470e5fd809f26dab09d523a363205d106cf2fadf4482f0e.png" />
+</div>
+</div>
+<p>Como podemos observar acima, a depender da profundidade, teremos diferentes máximos para profundidade, porém em todos os casos, ela sempre ocorre quando <span class="math notranslate nohighlight">\(\cos(kx-\omega t) = 1\)</span> e <span class="math notranslate nohighlight">\(\sen(kx-\omega t) = 0\)</span>, ou seja, quando <span class="math notranslate nohighlight">\(kx-\omega t = 2n\pi\)</span>. É possível observar a convergência para o valor em águas profundas: <span class="math notranslate nohighlight">\(V \approx 1.65 \;m/s\)</span>.</p>
+</section>
+</div>
+</section>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            name: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+                </article>
+              
+
+              
+              
+                <footer class="bd-footer-article">
+                  
+<div class="footer-article-items footer-article__inner">
+  
+    <div class="footer-article-item"><!-- Previous / next buttons -->
+<div class="prev-next-area">
+</div></div>
+  
+</div>
+
+                </footer>
+              
+            </div>
+            
+            
+              
+                <div class="bd-sidebar-secondary bd-toc"><div class="sidebar-secondary-items sidebar-secondary__inner">
+
+  <div class="sidebar-secondary-item">
+  <div class="page-toc tocsection onthispage">
+    <i class="fa-solid fa-list"></i> Contents
+  </div>
+  <nav class="bd-toc-nav page-toc">
+    <ul class="visible nav section-nav flex-column">
+<li class="toctree-l1 toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="lista5.html#document-Lista_5-Q1">Análise dimensional</a></li>
+<li class="toctree-l1 toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="lista5.html#document-Lista_5-Q2">Forma em movimento</a></li>
+<li class="toctree-l1 toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="lista5.html#document-Lista_5-Q3">Equação diferencial ordinária de segunda ordem com coeficientes constantes</a></li>
+<li class="toctree-l1 toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="lista5.html#document-Lista_5-Q4">Definições e conceitos</a></li>
+<li class="toctree-l1 toc-h1 nav-item toc-entry"><a class="reference internal nav-link" href="lista5.html#document-Lista_5-Q5">Velocidade da partícula</a></li>
+</ul>
+
+  </nav></div>
+
+</div></div>
+              
+            
+          </div>
+          <footer class="bd-footer-content">
+            
+<div class="bd-footer-content__inner container">
+  
+  <div class="footer-item">
+    
+<p class="component-author">
+By Evandro F. de Paula Filho
+</p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  <p class="copyright">
+    
+      © Copyright 2022.
+      <br/>
+    
+  </p>
+
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+  <div class="footer-item">
+    
+  </div>
+  
+</div>
+          </footer>
+        
+
+      </main>
+    </div>
+  </div>
+  
+  <!-- Scripts loaded after <body> so the DOM is not blocked -->
+  <script src="_static/scripts/bootstrap.js?digest=e353d410970836974a52"></script>
+<script src="_static/scripts/pydata-sphinx-theme.js?digest=e353d410970836974a52"></script>
+
+  <footer class="bd-footer">
+  </footer>
+  </body>
+</html>
